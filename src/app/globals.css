@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Fee Router design tokens — paper, ink, stamp.
+   The product is proof. The UI is a receipt.
+   ------------------------------------------------------------------ */
+:root {
+  --paper: #f3efe6;
+  --paper-2: #eae5d9;
+  --paper-3: #dfd9ca;
+  --ink: #101010;
+  --ink-2: #3a3a36;
+  --muted: #6e6b64; /* 4.6:1 on paper; body-text safe */
+  --line: rgba(16, 16, 16, 0.12);
+  --line-strong: rgba(16, 16, 16, 0.32);
+  --stamp: #e4321b;
+  --stamp-deep: #b8240f;
+  --verify: #1c9a4c;
+  --usdc: #2775ca;
+  --ledger: #121210;
+  --ledger-2: #1c1c19;
+  --ledger-line: rgba(243, 239, 230, 0.12);
+
+  --radius: 6px;
+  --radius-lg: 14px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-stamp: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-stamp: var(--stamp);
+  --color-stamp-deep: var(--stamp-deep);
+  --color-verify: var(--verify);
+  --color-usdc: var(--usdc);
+  --color-ledger: var(--ledger);
+  --color-ledger-2: var(--ledger-2);
+  --color-ledger-line: var(--ledger-line);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+
+  --radius-sm: var(--radius);
+  --radius-lg: var(--radius-lg);
+
+  --ease-out-expo: var(--ease-out-expo);
+  --ease-stamp: var(--ease-stamp);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11", "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--stamp);
+  color: var(--paper);
+}
+
+/* Keyboard focus is always visible in stamp red; components that set their own outline override this. */
+:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+}
+
+/* Paper grain: one SVG noise layer, fixed, never blocks pointer. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- utilities ---------- */
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+@utility font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum", "zero";
+}
+@utility text-balance {
+  text-wrap: balance;
+}
+/* Inline link with a 40px+ touch target and no layout change: padding grows the hit box, the negative margin gives it back when the element is blockified (flex/grid child). */
+@utility hit {
+  padding-block: 13px;
+  margin-block: -13px;
+}
+@utility hairline {
+  border: 1px solid var(--line);
+}
+@utility hairline-t {
+  border-top: 1px solid var(--line);
+}
+@utility hairline-b {
+  border-bottom: 1px solid var(--line);
+}
+@utility hairline-l {
+  border-left: 1px solid var(--line);
+}
+@utility ledger {
+  background: var(--ledger);
+  color: var(--paper);
+  --line: var(--ledger-line);
+  --line-strong: rgba(243, 239, 230, 0.35);
+  --muted: rgba(243, 239, 230, 0.55);
+  --paper-2: var(--ledger-2);
+}
+/* Receipt paper: perforated top/bottom edge. */
+@utility receipt-edge {
+  --edge: radial-gradient(circle at 6px 0, transparent 5px, var(--paper) 5.5px);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, var(--edge) top / 12px 6px repeat-x, var(--edge) bottom / 12px 6px repeat-x;
+}
+/* Dashed ledger rule between rows. */
+@utility rule-dashed {
+  background-image: linear-gradient(90deg, var(--line-strong) 0 50%, transparent 50% 100%);
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+/* Stamp: rotated, inked, slightly rough. */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.35em 0.7em;
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72em;
+  line-height: 1;
+  transform: rotate(-6deg);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80'%3E%3Cfilter id='r'%3E%3CfeTurbulence baseFrequency='0.7' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23000' filter='url(%23r)'/%3E%3C/svg%3E");
+  -webkit-mask-size: 200px 80px;
+}
+.ledger .stamp {
+  mix-blend-mode: screen;
+}
+@keyframes stamp-in {
+  0% {
+    opacity: 0;
+    transform: rotate(-6deg) scale(2.2);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(0.92);
+  }
+  100% {
+    transform: rotate(-6deg) scale(1);
+  }
+}
+.stamp-in {
+  animation: stamp-in 0.55s var(--ease-stamp) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

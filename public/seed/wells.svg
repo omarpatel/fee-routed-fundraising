@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Abstract water rings on paper">
+  <rect width="1200" height="675" fill="#F3EFE6"/>
+  <!-- survey grid -->
+  <g stroke="#101010" stroke-opacity="0.06">
+    <path d="M100 0V675M200 0V675M300 0V675M400 0V675M500 0V675M600 0V675M700 0V675M800 0V675M900 0V675M1000 0V675M1100 0V675"/>
+    <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200"/>
+  </g>
+  <!-- ripples, slightly off-centre, ink only -->
+  <g fill="none" stroke="#101010" transform="translate(720 360)">
+    <ellipse rx="560" ry="300" stroke-opacity="0.06" stroke-width="1.5"/>
+    <ellipse rx="460" ry="246" stroke-opacity="0.09" stroke-width="1.5"/>
+    <ellipse rx="370" ry="198" stroke-opacity="0.13" stroke-width="2"/>
+    <ellipse rx="290" ry="155" stroke-opacity="0.18" stroke-width="2"/>
+    <ellipse rx="220" ry="118" stroke-opacity="0.26" stroke-width="2.5"/>
+    <ellipse rx="158" ry="85" stroke-opacity="0.36" stroke-width="3"/>
+    <ellipse rx="104" ry="56" stroke-opacity="0.5" stroke-width="3.5"/>
+    <ellipse rx="58" ry="31" stroke-opacity="0.7" stroke-width="4"/>
+    <ellipse rx="20" ry="11" fill="#101010" stroke="none"/>
+  </g>
+  <!-- the drop: one red point -->
+  <circle cx="720" cy="150" r="10" fill="#E4321B"/>
+  <path d="M720 160V318" stroke="#E4321B" stroke-width="2" stroke-dasharray="3 7"/>
+  <!-- depth scale, left -->
+  <g stroke="#101010" stroke-opacity="0.5">
+    <path d="M96 120V560"/>
+    <path d="M88 120H104M88 180H104M88 240H104M88 300H104M88 360H104M88 420H104M88 480H104M88 540H104"/>
+  </g>
+  <g fill="#101010" fill-opacity="0.55" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2.5">
+    <text x="118" y="125">0 m</text>
+    <text x="118" y="545">60 m</text>
+    <text x="1152" y="632" text-anchor="end">SINDH · No. 0002</text>
+  </g>
+</svg>

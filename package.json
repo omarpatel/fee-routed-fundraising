@@ -1,0 +1,53 @@
+{
+  "name": "fee-router",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "db:push": "drizzle-kit push",
+    "db:seed": "tsx scripts/seed.ts && tsx scripts/rehash-seed.ts",
+    "worker": "tsx --env-file-if-exists=.env scripts/worker.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "@bagsfm/bags-sdk": "^1.4.4",
+    "@libsql/client": "^0.18.0",
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.99.0",
+    "arctic": "^3.7.0",
+    "bs58": "^6.0.0",
+    "drizzle-orm": "^0.45.3",
+    "gsap": "^3.15.0",
+    "jose": "^6.2.12",
+    "lenis": "^1.3.26",
+    "motion": "^13.4.1",
+    "nanoid": "^6.0.1",
+    "next": "16.3.6",
+    "qrcode": "^1.5.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.11",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.1"
+  },
+  "packageManager": "pnpm@10.13.1"
+}

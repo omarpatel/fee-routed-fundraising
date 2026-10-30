@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `deliveries_card_tx_idx` ON `deliveries` (`card_tx_id`);

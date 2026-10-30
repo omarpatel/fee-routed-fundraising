@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="NOUR token mark">
+  <defs>
+    <clipPath id="c"><circle cx="128" cy="128" r="128"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="256" height="256" fill="#EAE5D9"/>
+    <!-- accent: a red sun rising behind the horizon line -->
+    <circle cx="128" cy="116" r="62" fill="#E4321B"/>
+    <rect x="0" y="116" width="256" height="140" fill="#EAE5D9"/>
+    <path d="M0 116H256" stroke="#101010" stroke-width="3"/>
+  </g>
+  <circle cx="128" cy="128" r="126" fill="none" stroke="#101010" stroke-width="4"/>
+  <text x="128" y="200" text-anchor="middle" fill="#101010" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="72" letter-spacing="-2">NO</text>
+</svg>

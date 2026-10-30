@@ -1,0 +1,18 @@
+node_modules
+.next
+data/
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+# Local data, credentials, logs
+*.db
+*.db-*
+*.sqlite
+*.log
+*.pem
+*keypair*.json
+secrets/
+.claude/
+coverage/

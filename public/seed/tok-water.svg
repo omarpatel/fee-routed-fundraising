@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="WATER token mark">
+  <circle cx="128" cy="128" r="128" fill="#101010"/>
+  <!-- accent: paper ripples -->
+  <g fill="none" stroke="#DFD9CA">
+    <circle cx="128" cy="128" r="112" stroke-width="2" stroke-opacity="0.35"/>
+    <circle cx="128" cy="128" r="96" stroke-width="2" stroke-opacity="0.6"/>
+  </g>
+  <text x="128" y="150" text-anchor="middle" fill="#F3EFE6" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="72" letter-spacing="-2">WA</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="DOSE token mark">
+  <circle cx="128" cy="128" r="128" fill="#F3EFE6"/>
+  <circle cx="128" cy="128" r="120" fill="none" stroke="#101010" stroke-width="6" stroke-dasharray="10 8"/>
+  <text x="128" y="150" text-anchor="middle" fill="#101010" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="72" letter-spacing="-2">DO</text>
+  <!-- accent: red underline -->
+  <path d="M84 172H172" stroke="#E4321B" stroke-width="6"/>
+</svg>

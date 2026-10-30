@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Ruled exercise-book page with a window of light">
+  <rect width="1200" height="675" fill="#F3EFE6"/>
+  <!-- ruled lines -->
+  <g stroke="#101010" stroke-opacity="0.13">
+    <path d="M0 110H1200M0 150H1200M0 190H1200M0 230H1200M0 270H1200M0 310H1200M0 350H1200M0 390H1200M0 430H1200M0 470H1200M0 510H1200M0 550H1200M0 590H1200M0 630H1200"/>
+  </g>
+  <!-- margin line -->
+  <path d="M160 0V675" stroke="#E4321B" stroke-opacity="0.75" stroke-width="2"/>
+  <!-- punch holes -->
+  <g fill="#EAE5D9" stroke="#101010" stroke-opacity="0.25">
+    <circle cx="72" cy="170" r="14"/>
+    <circle cx="72" cy="505" r="14"/>
+  </g>
+  <!-- window of light: four panes -->
+  <g transform="translate(760 92)">
+    <rect width="340" height="380" fill="#FBF8F1"/>
+    <rect width="340" height="380" fill="none" stroke="#101010" stroke-opacity="0.6" stroke-width="3"/>
+    <path d="M170 0V380M0 190H340" stroke="#101010" stroke-opacity="0.6" stroke-width="3"/>
+    <!-- light spilling onto the page -->
+    <path d="M0 380L-120 583H460L340 380Z" fill="#FBF8F1" fill-opacity="0.7"/>
+  </g>
+  <!-- tally marks, as written on the page -->
+  <g stroke="#101010" stroke-width="3" stroke-linecap="square">
+    <path d="M200 180V228M216 180V228M232 180V228M248 180V228M192 226L256 182"/>
+    <path d="M300 180V228M316 180V228M332 180V228M348 180V228M292 226L356 182"/>
+    <path d="M400 180V228M416 180V228M432 180V228"/>
+    <path d="M200 260V308M216 260V308M232 260V308M248 260V308M192 306L256 262"/>
+    <path d="M300 260V308M316 260V308"/>
+  </g>
+  <g fill="#101010" fill-opacity="0.55" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2.5">
+    <text x="200" y="632">BEIRUT · No. 0003</text>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="HOPE token mark">
+  <circle cx="128" cy="128" r="128" fill="#EAE5D9"/>
+  <circle cx="128" cy="128" r="118" fill="none" stroke="#101010" stroke-width="3"/>
+  <!-- accent: one red point -->
+  <rect x="176" y="72" width="16" height="16" fill="#E4321B"/>
+  <text x="128" y="150" text-anchor="middle" fill="#101010" font-family="Geist Mono, ui-monospace, SFMono-Regular, Menlo, monospace" font-size="72" letter-spacing="-2">HO</text>
+</svg>
